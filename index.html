@@ -7,9 +7,61 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <section>
-        <p>Magnifier on search input:</p>
-        <input type="text" class="search-input"/>
+    <section class="search">
+        <input type="text" placeholder="Search" class="search-input"/>
     </section>
+
+    <!-- <input type="file" /> -->
+
+
+
+
+    <div class="button centered">
+        <p>content</p>
+    </div>
+
+    <section class="about-container">
+        <div class="absolute">Absolute</div>
+        <div class="fixed">Fixed</div>
+        <div class="static">Static</div>
+        <div class="container-title">
+            <span class="number">1</span>
+            <span class="title">Sobre o Arquivo</span>
+        </div>
+        <div class="form-input">
+            <input class="inputfile" type="file" 
+                id="filFileName" name="filFileName"/>
+            <label for="filFileName">SELECIONAR</label>
+        </div>
+
+        <div class="form-input">
+            <label for="txtPages">Quantas páginas tem o seu arquivo?</label>
+            <input type="text" id="txtPages"/>
+        </div>
+
+        <div class="form-input">
+            <label for="txtCopies">Quantas cópias deseja imprimir do arquivo?</label>
+            <input type="text" id="txtCopies"/>
+        </div>
+    </section>
+
+    <script>
+        var input = document.querySelector('input[type=file]');
+
+        // You will receive the Base64 value every time a user selects a file from his device
+        // As an example I selected a one-pixel red dot GIF file from my computer
+        input.onchange = function () {
+        var file = input.files[0],
+            reader = new FileReader();
+
+        reader.onloadend = function () {
+            // Since it contains the Data URI, we should remove the prefix and keep only Base64 string
+            var b64 = reader.result.replace(/^data:.+;base64,/, '');
+            console.log(b64); //-> "R0lGODdhAQABAPAAAP8AAAAAACwAAAAAAQABAAACAkQBADs="
+        };
+
+        reader.readAsDataURL(file);
+        };
+    </script>
 </body>
 </html>

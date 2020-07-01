@@ -1,11 +1,133 @@
+.search{
+    display: flex;
+    justify-content: flex-end;
+}
+
 .search-input {
     font-size: 32px;
     border-radius: 5px;
     color: #999;
-    width: 260px;
+    width: 100px;
     height: 40px;
-    padding: 10px 80px 10px 20px;
-    background-position: 300px 8px;
+    padding: 10px 80px 10px 80px;
+    background-position: 20px 8px;
     background-image: url('http://www.kirupa.com/images/search.png');
     background-repeat: no-repeat;
+    transition: width ease-in .2s;
   }
+
+  .search-input:focus {
+      width: 260px;
+  }
+
+  .container-title {
+      margin-top: -20px;
+      margin-left: -4px;
+      background-color: white;
+      width: 200px;
+  }
+
+  .container-title .number {
+      font-size: 32px;
+      font-weight: bolder;
+  }
+
+  .container-title .title {
+    font-size: 24px;
+    font-weight: bolder;
+    margin-left: 20px;
+  }
+
+  .about-container {
+      position: relative;
+      border: 3px solid #F390C4;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      width: 50%;
+      border-radius: 10px;
+      margin-top: 100px;
+    }
+
+    .absolute {
+        position: absolute;
+        top: 80px;
+        left: 80px;
+    }
+
+    .fixed {
+        position: fixed;
+        left: 50%;
+        top: 50%;   
+    }
+
+    .static {
+        position: static;
+        top: 100px;
+        left: 100px;
+    }
+    
+    .about-container input {
+        width: 60%;
+        height: 25px;
+        justify-content: center;
+        
+    }
+
+    .form-input {
+        margin: 10px 0 10px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-input:nth-child(1) {
+        margin-top: 50px;
+    }
+
+    .inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+    
+    .inputfile + label {
+        /* display: flex;
+        justify-content: center; */
+        
+        /* text-align: center; */
+        /* vertical-align: middle; */
+        font-size: 1.25em;
+        font-weight: 700;
+        color: white;
+        background-color: #21AFEF;
+        display: inline-block;
+        width: 161px;
+        height: 36px;
+        /* height: 136px; */
+        border-radius: 7px;
+    }
+    
+    .inputfile:focus + label,
+    .inputfile + label:hover {
+        background-color: red;
+    }
+
+    .centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button {
+        background-color: #21AFEF;
+        margin: 10px;
+        width: 60%;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 7px;
+    }
